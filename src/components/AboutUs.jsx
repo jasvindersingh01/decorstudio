@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
 import aboutImg from "../assets/about.jpeg";
 
 const About = () => {
   return (
-    <section className="bg-[#0a0a0a] text-white py-20">
-      <div className="w-full px-6 md:px-16 lg:px-24">
+    <section
+      id="about"
+      className="bg-[#0a0a0a] text-white py-20 scroll-mt-18">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="w-full px-6 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          
+
           {/* Left Image */}
           <div className="relative">
             <img
@@ -59,7 +67,7 @@ const About = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

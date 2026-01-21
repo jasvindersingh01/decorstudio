@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -19,8 +20,8 @@ const GallerySection = () => {
     { id: 9, category: 'printing', title: 'Banner Printing', image: 'img9' },
   ];
 
-  const filteredImages = activeCategory === 'all' 
-    ? galleryImages 
+  const filteredImages = activeCategory === 'all'
+    ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory);
 
   const openLightbox = (image) => {
@@ -34,21 +35,29 @@ const GallerySection = () => {
   const navigateImage = (direction) => {
     const currentIndex = filteredImages.findIndex(img => img.id === selectedImage.id);
     let newIndex;
-    
+
     if (direction === 'next') {
       newIndex = (currentIndex + 1) % filteredImages.length;
     } else {
       newIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
     }
-    
+
     setSelectedImage(filteredImages[newIndex]);
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-4">
+    <div
+      id='gallery'
+
+      className="min-h-screen bg-black text-white py-20 px-4 scroll-mt-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-center mb-16">
           <div className="inline-block mb-6">
             <span className="text-yellow-400 text-sm font-semibold tracking-wider uppercase border border-yellow-400/30 px-4 py-2 rounded-full">
               Our Gallery
@@ -60,7 +69,7 @@ const GallerySection = () => {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Explore our portfolio of exceptional decor and printing projects that showcase our commitment to quality and creativity.
           </p>
-        </div>
+        </motion.div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -68,11 +77,10 @@ const GallerySection = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 capitalize ${
-                activeCategory === category
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 capitalize ${activeCategory === category
                   ? 'bg-yellow-400 text-black'
                   : 'bg-transparent text-gray-400 border border-gray-700 hover:border-yellow-400 hover:text-yellow-400'
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -80,7 +88,12 @@ const GallerySection = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredImages.map((image) => (
             <div
               key={image.id}
@@ -91,7 +104,7 @@ const GallerySection = () => {
               <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                 <span className="text-6xl font-bold text-gray-700">{image.image}</span>
               </div>
-              
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{image.title}</h3>
@@ -105,10 +118,15 @@ const GallerySection = () => {
               <div className="absolute inset-0 border-2 border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-20 border-t border-gray-800">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-20 border-t border-gray-800">
           <div className="text-center">
             <div className="text-5xl font-bold text-yellow-400 mb-2">500+</div>
             <div className="text-gray-400 text-lg">Projects Completed</div>
@@ -121,7 +139,7 @@ const GallerySection = () => {
             <div className="text-5xl font-bold text-yellow-400 mb-2">100%</div>
             <div className="text-gray-400 text-lg">Client Satisfaction</div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Lightbox Modal */}

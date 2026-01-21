@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -37,8 +38,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-[#0f0f0f] text-white">
-      <div className="px-6 md:px-16 lg:px-24">
+    <section className="py-20 bg-[#0f0f0f] text-white">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="px-6 md:px-16 lg:px-24">
 
         {/* Heading */}
         <div className="max-w-2xl mb-14 justify-center text-center mx-auto">
@@ -134,7 +140,7 @@ export default function Testimonials() {
           </a>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 }

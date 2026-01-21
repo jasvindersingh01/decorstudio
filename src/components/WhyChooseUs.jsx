@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   Award,
   Clock,
@@ -42,7 +43,12 @@ const WhyDecorStudio = () => {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
           
           {/* LEFT CONTENT */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <span className="text-yellow-400 text-sm font-semibold tracking-widest">
               WHY DECOR STUDIO
             </span>
@@ -79,10 +85,15 @@ const WhyDecorStudio = () => {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT STATS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" , delay: 0.2}}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {stats.map((stat, i) => (
               <div
                 key={i}
@@ -98,7 +109,7 @@ const WhyDecorStudio = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </div>

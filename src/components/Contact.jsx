@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   Phone,
   Mail,
@@ -9,11 +10,16 @@ import {
 
 const Contact = () => {
   return (
-    <section id="#contact" className="bg-[#0f0f0f] text-white py-28">
+    <section id="contact" className="bg-[#0f0f0f] text-white py-28">
       <div className="px-6 md:px-16 lg:px-24">
 
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="max-w-2xl mb-16">
           <span className="inline-block mb-4 border border-yellow-400/40 text-yellow-400 px-4 py-1 rounded-full text-sm">
             Contact Us
           </span>
@@ -24,13 +30,18 @@ const Contact = () => {
             Have a project in mind? Let’s talk. Reach out to us through phone,
             email, or visit our studio.
           </p>
-        </div>
+        </motion.div>
 
         {/* Content */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-14">
 
           {/* LEFT : Contact Info */}
-          <div className="space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="space-y-8">
 
             {/* Phone */}
             <div className="flex items-start gap-5 bg-black/60 border border-white/10 rounded-2xl p-6
@@ -106,7 +117,7 @@ const Contact = () => {
                   <Facebook />
                 </a>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/918696748334"
                   target="_blank"
                   className="w-12 h-12 flex items-center justify-center rounded-xl
                   bg-black/60 border border-white/10 text-yellow-400
@@ -116,10 +127,15 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT : Google Map */}
-          <div className="relative w-full h-[420px] rounded-2xl overflow-hidden
+          <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative w-full h-[420px] rounded-2xl overflow-hidden
             border border-white/10">
             <iframe
               title="Decor Studio Location"
@@ -127,7 +143,7 @@ const Contact = () => {
               className="w-full h-full transition"
               loading="lazy"
             />
-          </div>
+          </motion.div>
 
         </div>
       </div>

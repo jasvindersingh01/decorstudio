@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
     Phone,
     Mail,
@@ -12,7 +13,12 @@ const Footer = () => {
         <footer className="bg-black text-white">
 
             {/* Main Footer */}
-            <div className="px-6 md:px-16 lg:px-24 py-20 border-b border-white/10">
+            <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="px-6 md:px-16 lg:px-24 py-20 border-b border-white/10">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12">
 
                     {/* Brand */}
@@ -128,7 +134,7 @@ const Footer = () => {
                     </div>
 
                 </div>
-            </div>
+            </motion.div>
 
             <div className="py-6 text-center text-gray-500 text-sm border-t border-white/10">
                 © {new Date().getFullYear()}{" "}

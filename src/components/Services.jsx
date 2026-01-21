@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   Printer,
   Image,
@@ -85,11 +86,18 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="bg-[#121111] text-white py-24">
+    <section
+      id="services"
+      className="bg-[#121111] text-white py-20 scroll-mt-8">
       <div className="px-6 md:px-16 lg:px-24">
-        
+
         {/* Section Header */}
-        <div className="max-w-2xl mb-14 justify-center text-center mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="max-w-2xl mb-14 justify-center text-center mx-auto">
           <span className="inline-block mb-4 border border-yellow-400/40 text-yellow-400 px-4 py-1 rounded-full text-sm">
             Our Services
           </span>
@@ -100,10 +108,15 @@ const Services = () => {
             We provide end-to-end decor and printing services with precision,
             creativity, and premium quality.
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
@@ -154,7 +167,7 @@ const Services = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
