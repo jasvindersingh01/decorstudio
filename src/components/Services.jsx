@@ -3,86 +3,87 @@ import {
   Printer,
   Image,
   Scissors,
-  Zap,
+  Layers,
   Lightbulb,
-  FileText,
+  Sparkles,
   CheckCircle2,
 } from "lucide-react";
 
 const services = [
   {
-    title: "Flex & Vinyl Printing",
+    title: "Printing & Branding",
     icon: Printer,
     desc:
-      "High-quality flex and vinyl printing for banners, hoardings, shop boards, and promotional materials.",
+      "Complete printing and branding solutions including flex, vinyl, digital prints, and visiting cards for businesses.",
     points: [
-      "Large Format Printing",
-      "Weather Resistant",
-      "Custom Sizes",
-      "Fast Turnaround",
+      "Flex & Vinyl Printing",
+      "Digital Printing",
+      "Visiting Cards",
+      "Branding Materials",
     ],
   },
   {
-    title: "Wallpaper",
+    title: "Wallpaper & Wall Graphics",
     icon: Image,
     desc:
-      "Transform your walls with our premium wallpaper collection. Custom designs and professional installation included.",
+      "Premium wallpapers and wall graphics that enhance interiors with custom designs and finishes.",
     points: [
-      "Custom Designs",
+      "Designer Wallpapers",
+      "Wall Stickers",
+      "Custom Wall Graphics",
       "Professional Installation",
-      "Variety of Textures",
-      "Easy Maintenance",
     ],
   },
   {
-    title: "CNC Cutting",
+    title: "CNC & Laser Cutting",
     icon: Scissors,
     desc:
-      "Precision CNC cutting for wood, MDF, acrylic, and more. Perfect for decor and signage.",
+      "High-precision CNC and laser cutting services for decor, signage, and custom design elements.",
     points: [
-      "Intricate Designs",
+      "CNC Cutting",
+      "Laser Cutting",
       "Multiple Materials",
-      "High Precision",
-      "Custom Patterns",
+      "Precision Work",
     ],
   },
   {
-    title: "Laser Cutting",
-    icon: Zap,
-    desc:
-      "Advanced laser cutting solutions for clean edges and detailed designs.",
-    points: [
-      "Clean Finish",
-      "High Accuracy",
-      "Fast Processing",
-      "Custom Shapes",
-    ],
-  },
-  {
-    title: "LED Letters",
+    title: "LED Letters & Signage",
     icon: Lightbulb,
     desc:
-      "Eye-catching LED letters and signage for branding and storefronts.",
+      "Eye-catching LED letters and signage solutions to make your brand stand out day and night.",
     points: [
-      "Bright Illumination",
+      "LED Letters",
+      "Shop Sign Boards",
+      "Indoor & Outdoor Signage",
       "Energy Efficient",
-      "Custom Fonts",
-      "Indoor & Outdoor",
     ],
   },
   {
-    title: "Visiting Cards",
-    icon: FileText,
+    title: "Event Props & Displays",
+    icon: Sparkles,
     desc:
-      "Premium visiting cards that leave a lasting impression.",
+      "Creative event props and display solutions for promotions, exhibitions, and special occasions.",
     points: [
-      "Premium Paper",
-      "Custom Finishes",
-      "Sharp Printing",
-      "Quick Delivery",
+      "Event Props",
+      "Stage Decor",
+      "Promotional Displays",
+      "Custom Fabrication",
+    ],
+  },
+  {
+    title: "Custom Decor Solutions",
+    icon: Layers,
+    desc:
+      "Tailor-made decor solutions designed to match your vision, space, and branding needs.",
+    points: [
+      "Custom Designs",
+      "Mixed Materials",
+      "One-of-a-Kind Projects",
+      "End-to-End Execution",
     ],
   },
 ];
+
 
 const Services = () => {
   return (

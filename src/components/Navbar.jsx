@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { li } from "framer-motion/client";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", path: "/home" },
+    { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -19,7 +21,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
-          <img src="/logo.png" alt="Decor Studio" className="w-14" />
+          <img src="logo.png" alt="Decor Studio" className="w-14" />
           <span className="text-white font-semibold text-lg">
             Decor <span className="text-yellow-400">Studio</span>
           </span>
@@ -29,18 +31,20 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center">
           {navLinks.map((item) => (
             <li key={item.name}>
-              <a
-                href={item.href}
-                className="mx-4 text-white relative
+              <Link to={item.path}
+               className={`mx-4 text-white relative
                   after:content-['']
                   after:absolute after:left-0 after:-bottom-1
-                  after:h-[2px] after:w-0
-                  after:bg-yellow-400
+                  after:h-[2px] after:bg-yellow-400
                   after:transition-all after:duration-300
-                  hover:after:w-full"
+                  ${
+                    location.pathname === item.path
+                      ? "after:w-full"
+                      : "after:w-0 hover:after:w-full"
+                  }`}
               >
-                {item.name}
-              </a>
+              {item.name}
+              </Link>
             </li>
           ))}
         </ul>

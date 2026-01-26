@@ -22,7 +22,6 @@ const itemUp = {
   },
 };
 
-
 const Hero = () => {
   return (
     <section

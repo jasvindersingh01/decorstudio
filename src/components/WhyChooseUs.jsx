@@ -98,7 +98,7 @@ const WhyDecorStudio = () => {
               <div
                 key={i}
                 className="bg-black/60 border border-white/10 rounded-2xl p-10 text-center
-                transition hover:border-yellow-400/40
+                transition hover:scale-102 duration-300 hover:border-yellow-400/40
                 hover:shadow-[0_0_60px_rgba(250,204,21,0.12)]"
               >
                 <h3 className="text-5xl font-bold text-yellow-400 mb-2">
