@@ -7,11 +7,14 @@ import {
   Lightbulb,
   Sparkles,
   CheckCircle2,
+  ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     title: "Printing & Branding",
+    slug: "printing-branding",
     icon: Printer,
     desc:
       "Complete printing and branding solutions including flex, vinyl, digital prints, and visiting cards for businesses.",
@@ -24,6 +27,7 @@ const services = [
   },
   {
     title: "Wallpaper & Wall Graphics",
+    slug: "wallpaper-wall-graphics",
     icon: Image,
     desc:
       "Premium wallpapers and wall graphics that enhance interiors with custom designs and finishes.",
@@ -36,6 +40,7 @@ const services = [
   },
   {
     title: "CNC & Laser Cutting",
+    slug: "cnc-laser-cutting",
     icon: Scissors,
     desc:
       "High-precision CNC and laser cutting services for decor, signage, and custom design elements.",
@@ -48,6 +53,7 @@ const services = [
   },
   {
     title: "LED Letters & Signage",
+    slug: "led-letters-signage",
     icon: Lightbulb,
     desc:
       "Eye-catching LED letters and signage solutions to make your brand stand out day and night.",
@@ -60,6 +66,7 @@ const services = [
   },
   {
     title: "Event Props & Displays",
+    slug: "event-props-displays",
     icon: Sparkles,
     desc:
       "Creative event props and display solutions for promotions, exhibitions, and special occasions.",
@@ -72,6 +79,7 @@ const services = [
   },
   {
     title: "Custom Decor Solutions",
+    slug: "custom-decor-solutions",
     icon: Layers,
     desc:
       "Tailor-made decor solutions designed to match your vision, space, and branding needs.",
@@ -112,12 +120,12 @@ const Services = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
@@ -159,6 +167,14 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="inline-flex items-center gap-2 text-yellow-400 font-semibold group-hover:gap-3 transition-all pt-4"
+                >
+                  Learn More
+                  <ArrowRight size={18} />
+                </Link>
 
                 {/* Hover Overlay (Subtle) */}
                 <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0

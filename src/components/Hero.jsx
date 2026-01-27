@@ -96,7 +96,7 @@ const Hero = () => {
             </button>
 
             <a
-              href="tel:+919876543210"
+              href="tel:+918696748334"
               className="flex items-center gap-2 border border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg hover:bg-yellow-400 hover:text-black transition"
             >
               <Phone size={18} />
