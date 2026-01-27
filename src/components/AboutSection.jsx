@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import aboutImg from "../assets/about.jpeg";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
     <section
-      id="about"
       className="bg-[#0a0a0a] text-white py-20 scroll-mt-18">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -63,7 +63,9 @@ const About = () => {
 
             {/* CTA */}
             <button className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
+              <Link to="/about">
               Learn More
+              </Link>
             </button>
           </div>
         </div>

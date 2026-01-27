@@ -24,7 +24,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div>
                         <div className="flex items-center gap-3 mb-4">
-                            <img src="logo.png" alt="Decor Studio" className="h-16" />
+                            <img src="/logo.png" alt="Decor Studio" className="h-16" />
                             <h3 className="text-xl font-display font-bold">
                                 Decor <span className="text-yellow-400">Studio</span>
                             </h3>
