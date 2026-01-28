@@ -14,11 +14,13 @@ import CncLaserCutting from "./pages/services/CncLaserCutting";
 import EventPropsDisplays from "./pages/services/EventPropsDisplays";
 import LedLettersSignage from "./pages/services/LedLettersSignage";
 import CustomDecorSolutions from "./pages/services/CustomDecorSolutions";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
