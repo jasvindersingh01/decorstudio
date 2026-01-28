@@ -21,6 +21,7 @@ export default function App() {
     <>
       <Navbar />
       <ScrollToTop />
+      <div className="overflow-x-hidden">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/services/event-props-displays" element={<EventPropsDisplays />} />
         <Route path="/services/custom-decor-solutions" element={<CustomDecorSolutions/>} />
       </Routes>
+      </div>
 
       <FloatingButtons />
       <Footer />
