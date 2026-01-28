@@ -77,9 +77,9 @@ const ContactPage = () => {
                 <section className="pt-12 pb-4 text-center">
                     <motion.div
                         {...fadeInLeft}>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                             Get In <span className="text-yellow-400">Touch</span>
-                        </h1>
+                        </h2>
                     </motion.div>
                 </section>
 

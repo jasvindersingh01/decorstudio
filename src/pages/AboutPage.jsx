@@ -69,9 +69,9 @@ const AboutPage = () => {
             <span className="inline-block mb-4 border border-yellow-400/40 text-yellow-400 px-4 py-1 rounded-full text-sm">
               Our Journey
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">
               About Decor <span className="text-yellow-400">Studio</span>
-            </h1>
+            </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
               <div className="relative rounded-2xl overflow-hidden h-[450px]">
