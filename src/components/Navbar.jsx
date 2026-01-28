@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { servicesList } from "../data/services";
 
@@ -22,12 +22,12 @@ const Navbar = () => {
       <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 py-4 bg-black/40 backdrop-blur-md">
 
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="Decor Studio" className="w-14" />
           <span className="text-white font-semibold text-lg">
             Decor <span className="text-yellow-400">Studio</span>
           </span>
-        </a>
+        </Link>
 
         <ul className="hidden md:flex items-center">
           {navLinks.map((item) => {

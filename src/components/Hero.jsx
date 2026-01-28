@@ -91,9 +91,11 @@ const Hero = () => {
             variants={itemUp}
             className="flex gap-4"
           >
-            <button className="flex items-center gap-2 bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
-              View Services <ArrowRight size={18} />
-            </button>
+            <a href="#services">
+              <button className="flex items-center gap-2 bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
+                View Services <ArrowRight size={18} />
+              </button>
+            </a>
 
             <a
               href="tel:+918696748334"
